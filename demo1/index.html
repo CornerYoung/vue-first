@@ -21,6 +21,13 @@
     <div id="app-3">
         <p v-if="seen">现在你看到我了</p>
     </div>
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.name}}
+            </li>
+        </ol>
+    </div>
     <script>
         var obj = {
             message:'hello vue!',
@@ -42,6 +49,18 @@
             el: '#app-3',
             data: {
                 seen: false
+            }
+        });
+
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [
+                    {name: '《笑傲江湖》'},
+                    {name: '《神雕侠侣》' },
+                    {name: '《射雕英雄传》' },
+                    {name: '《天龙八部》' }
+                ]
             }
         });
     </script>
