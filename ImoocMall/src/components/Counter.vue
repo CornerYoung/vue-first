@@ -7,18 +7,19 @@
 </template>
 <script>
 export default {
-  data(){
-      return{
-          num:0
-      }
-  },
-  methods:{
-      increment(){
-          this.num++;
-      },
-      decrement(){
-          this.num--;
-      }
-  }
+    props:['num'],
+    data(){
+        return{
+            num:0
+        }
+    },
+    methods:{
+        increment(){
+            this.num++;
+        },
+        decrement(){
+            this.num--;
+        }
+    }
 }
 </script>
