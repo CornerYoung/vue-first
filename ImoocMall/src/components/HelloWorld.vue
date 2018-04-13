@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <Counter></Counter>
+    <Counter v-bind:num="num"></Counter>
+    <p>parent:{{num}}</p>
   </div>
 </template>
 
@@ -11,6 +12,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      num:10,
       msg: 'Welcome to Your Vue.js App'
     }
   },
