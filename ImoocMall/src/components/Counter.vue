@@ -15,10 +15,10 @@ export default {
     },
     methods:{
         increment(){
-            this.num++;
+            this.$emit('incre');
         },
         decrement(){
-            this.num--;
+            this.$emit('decre');
         }
     }
 }
