@@ -13,23 +13,16 @@ export default new Router({
     {//动态路由，必须符合我的规则，必须是以goods开头的，而且后面必须紧跟一个动态的变量
       path: '/goods',  
       name: 'GoodsList',
-      component: GoodsList,
-      //嵌套路由 子路由
-      children:[
-        {
-          path:'title',
-          name:'title',
-          component:Title
-        },
-        {
-          path:'img',
-          name:'img',
-          component:Image
-        }
-      ]
+      components: {
+        default: GoodsList,
+        title: Title,
+        img: Image
+      }
     },
     {
-      path: '/cart',
+      // path: '/cart',
+      path: '/cart/:cartId',
+      name: 'cart',
       component:Cart
     }
   ]
