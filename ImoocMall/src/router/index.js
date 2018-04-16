@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import GoodsList from './../views/GoodsList'
 import Title from '@/views/Title'
 import Image from '@/views/Image'
+import Cart from '@/views/Cart'
 
 Vue.use(Router)
 //Vue Router 就是对原生 History 的封装
@@ -13,6 +14,7 @@ export default new Router({
       path: '/goods',  
       name: 'GoodsList',
       component: GoodsList,
+      //嵌套路由 子路由
       children:[
         {
           path:'title',
@@ -25,6 +27,10 @@ export default new Router({
           component:Image
         }
       ]
+    },
+    {
+      path: '/cart',
+      component:Cart
     }
   ]
 })
