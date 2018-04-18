@@ -27,8 +27,15 @@
             data: {
                 msg: ''
             },
-            mounted: function(){
-
+            mounted: function(){  //全局拦截器
+                axios.interceptors.request.usr(function(config){
+                    console.log('request init.');
+                    return config;
+                });
+                axios.interceptors.response.usr(function (config) {
+                    console.log('response init.');
+                    return response;
+                })
             },
             methods: {
                 get: function () {
