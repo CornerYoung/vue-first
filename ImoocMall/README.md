@@ -46,11 +46,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 4.vue路由
 ----
 ```
-vue-router用来构建SPA
-<router-link></router-link>或者this.$router.push{{path:''}}
-<router-view></router-view>
-动态路由匹配
-嵌套路由
-编程式路由
-命名路由和命名视图
+    vue-router用来构建SPA
+    <router-link></router-link>或者this.$router.push{{path:''}}
+    <router-view></router-view>
+    动态路由匹配
+    嵌套路由
+    编程式路由
+    命名路由和命名视图
 ```
