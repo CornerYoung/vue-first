@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <title>vue-resource</title>
     <script src="../node_modules/vue/dist/vue.js"></script>
-    <script src="../node_modules/vue-resource/dist/vue-resource.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
 </head>
 
 <body>
@@ -32,7 +32,21 @@
             },
             methods: {
                 get: function () {
-                    
+                    axios.get('../package.json',{
+                        params:{
+                            userId:'999'
+                        },
+                        header:{
+                            token:'Jack'
+                        },
+                        before:function(){
+                            console.log('before init.')
+                        }
+                    }).then(res=>{
+                        this.msg = res.data;
+                    }).catch(function(error){
+                        console.log('error init.'+ error)
+                    })
                 },
                 post: function () {
                     
