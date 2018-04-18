@@ -38,9 +38,6 @@
                         },
                         header:{
                             token:'Jack'
-                        },
-                        before:function(){
-                            console.log('before init.')
                         }
                     }).then(res=>{
                         this.msg = res.data;
@@ -49,7 +46,17 @@
                     })
                 },
                 post: function () {
-                    
+                    axios.post('../package.json',{
+                        userId:'888'
+                    },{
+                        header:{
+                            token:'tom'
+                        }
+                    }).then(res=>{
+                        this.msg = res.data;
+                    }).catch(error=>{
+                        console.log('error init.' + error);
+                    })
                 },
                 http: function () {
                     
