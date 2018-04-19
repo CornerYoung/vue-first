@@ -28,12 +28,12 @@
                 msg: ''
             },
             mounted: function(){  //全局拦截器
-                axios.interceptors.request.usr(function(config){
-                    console.log('request init.');
+                axios.interceptors.request.use(function(config){
+                    console.log('request init.' + config);
                     return config;
                 });
-                axios.interceptors.response.usr(function (config) {
-                    console.log('response init.');
+                axios.interceptors.response.use(function (config) {
+                    console.log('response init.' + config);
                     return response;
                 })
             },
@@ -48,6 +48,7 @@
                         }
                     }).then(res=>{
                         this.msg = res.data;
+                        console.log('访问成功！')
                     }).catch(function(error){
                         this.msg = error;
                         console.log('error init.'+ error)
@@ -55,13 +56,18 @@
                 },
                 post: function () {
                     axios.post('../package.json',{
-                        userId:'888'
+                        userId:'888',
+                        type:'post'
+                        // params: {
+                        //     userId: '999'
+                        // }
                     },{
                         header:{
                             token:'tom'
                         }
                     }).then(res=>{
                         this.msg = res.data;
+                        console.log('访问成功！')
                     }).catch(error=>{
                         this.msg = error;
                         console.log('error init.' + error);
@@ -69,8 +75,8 @@
                 },
                 http: function () {
                     axios({
-                        url: 'http://www.imooc.com/course/AjaxCourseMembers?ids=796',
-                        //url:'../package.json',
+                        //url: 'http://www.imooc.com/course/AjaxCourseMembers?ids=796',
+                        url:'../package.json',
                         method:'get',
                         data:{
                             userId:'101'
@@ -80,6 +86,7 @@
                         }
                     }).then(res => {
                         this.msg = res.data;
+                        console.log('访问成功！')
                     }).catch(error => {
                         console.log('error init.' + error);
                         this.msg = error;
