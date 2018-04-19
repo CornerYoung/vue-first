@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 Promise演示</title>
+</head>
+<body>
+<h2>ES6 Promise演示</h2>
+<script>
+    //Promise 解决的问题就是 callback ，不让它去回调。
+    //避免回调完再回调，回调完再回调，使代码更清晰，而不是像一个金字塔
+    let checkLogin = function(){
+        return new Promise(function(resolve,reject){
+            let flag = document.cookie.indexOf('userId')>-1?true:false;
+
+            if(flag=true){
+                resolve({
+                    status:0,
+                    result:true
+                })
+            }else{
+                reject('error');
+            };
+        });
+    };
+
+    checkLogin().then(function(res){
+        if(res.status == 0){
+            console.log('login success!');
+        };
+    }).catch((error)=>{
+        console.log(`error:${error}`)
+    })
+</script>
+</body>
+</html>
