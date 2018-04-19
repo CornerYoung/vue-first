@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 Demo演示</title>
+</head>
+<body>
+<h2>ES6 Demo演示</h2>
+<script>
+    function sum(x,y,z){
+        let total = 0;
+        if (x) total += x;
+        if (y) total += y;
+        if (z) total += z;
+
+        console.log(`total:${total}`)
+    };
+    sum(2,'',9)
+
+    //Rest 参数 （不太确定的，动态的）
+    function sum2(...num){
+        let total = 0;
+        for(var i of num){
+            total += i;
+        };
+        console.log(`total:${total}`)
+    };
+    sum2(4,35,78,01,'') //数字加空字符串相当于 +0 ，数字加非空字符串就相当于是字符串拼接，前面的数字变成字符串
+
+    let sum3 = (...num)=>{
+        let total = 0;
+        for (var i of num) {
+            total += i;
+        };
+        console.log(`total:${total}`)
+    };
+    sum3(09,10,7,2)
+
+    var [x,y] = [3,6,9];
+    console.log([3, 6, 9])
+    console.log(...[3, 6, 9])
+
+    //数组合并
+    let arr1 = [1,3];
+    let arr2 = [2,4];
+    console.log('concat: ' + arr1.concat(arr2));
+    console.log([...arr1, ...arr2]);
+    console.log(...[...arr1,...arr2]);
+
+    var [a,...b] = [10,20,30,40,50,60];
+    console.log(...[a, ...b]);
+
+    //变量
+    let [d,e,f] = 'ES6';
+    let xy = [...'ES6']
+</script>
+</body>
+</html>
