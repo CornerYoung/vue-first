@@ -12,11 +12,11 @@
     //Promise 解决的问题就是 callback ，不让它去回调。
     //避免回调完再回调，回调完再回调，使代码更清晰，而不是像一个金字塔
     let checkLogin = function(){
-        return new Promise(function(resolve,reject){
+        return new Promise(function(resolve,reject){//reject是函数体接口报错
             let flag = document.cookie.indexOf('userId')>-1?true:false; //搜寻 cookie 里面是否有 userId
 
             if(flag=true){
-                resolve({//固定格式：如果把一个函数封装成 Promise ，一定要用 resolve 进行返回，resolve 是回调，是固定的
+                resolve({//固定格式：如果把一个函数封装成 Promise 的结构，一定要通过 resolve 进行返回，resolve 是回调，是固定的
                     status:0,
                     result:true
                 })
@@ -35,7 +35,7 @@
         });
     };
     
-    checkLogin().then(function(res){
+    checkLogin().then(function(res){  //Promise结构才能调用 then 函数，这里 checkLogin 调用之后返回一个 Promise 对象，通过 .then 获取里面的回调（参数）
         if(res.status == 0){
             console.log('login success!');
             return getUserInfo();
