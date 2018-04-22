@@ -20,7 +20,7 @@
                     status:0,
                     result:true
                 })
-            }else{
+            }else{ //这里 reject 不应该写在 else 里面，因为没有获得 cookie 中的 userId 有可能是没有登录，并不一定是报错，这里只是演示一下
                 reject('error');
             };
         });
