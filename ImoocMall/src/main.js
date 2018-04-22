@@ -13,3 +13,11 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+
+//也可以通过挂载 el
+// new Vue({
+//   router,
+//   components: { App },
+//   template: '<App/>'
+// }).$mount('#app');
