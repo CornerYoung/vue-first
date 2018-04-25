@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import GoodsList from './../views/GoodsList'
-import Title from '@/views/Title'
-import Image from '@/views/Image'
+import Title from '@/views-practice/Title'
+import Image from '@/views-practice/Image'
 import Cart from '@/views/Cart'
 
 Vue.use(Router)
