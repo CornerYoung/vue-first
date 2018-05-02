@@ -16,6 +16,7 @@
         <button class="btn btn-primary">点击</button>
         <ul v-for="music in musics">
             <li class="btn btn-default">{{music.name}}</li>
+            <br>
             <li class="btn btn-default">
                 <img :src="music.album.picUrl" class="img-circle" style="width:200px;">
             </li>
@@ -33,7 +34,7 @@
             },
             mounted: function() {
                 let _this = this;
-                // axios.get(API_PROXY + 'http://music.163.com/api/playlist/detail?id=12345')
+                // axios.get(API_PROXY + 'http://music.163.com/api/playlist/detail?id=19723756')
                 axios.get('./music.json')
                     .then(function (res) {
                         //_this.msg = res.data.result.tracks;
