@@ -105,7 +105,7 @@ import './../assets/css/product.css'
 import './../assets/css/checkout.css'
 import './../assets/css/login.css'
 //import NavHeader from '@/components/Header.vue'
-import NavHeader from '../components/Header'
+import NavHeader from '../components/NavHeader'
 import NavFooter from '@/components/NavFooter'
 export default {
   
