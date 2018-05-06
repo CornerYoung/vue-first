@@ -1,5 +1,6 @@
 <template>
     <div>
+      <nav-header></nav-header>
       <div class="nav-breadcrumb-wrap">
         <div class="container">
           <nav class="nav-breadcrumb">
@@ -95,34 +96,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="footer__wrap">
-          <div class="footer__secondary">
-            <div class="footer__inner">
-              <div class="footer__region">
-                <span>Region</span>
-                <select class="footer__region__select">
-                  <option value="en-US">USA</option>
-                  <option value="zh-CN">China</option>
-                  <option value="in">India</option>
-                </select>
-              </div>
-              <div class="footer__secondary__nav">
-                <span>Copyright © 2017 IMooc All Rights Reserved.</span>
-                <a href="http://us.lemall.com/us/aboutUs.html">
-                  About Us
-                </a>
-                <a href="http://us.lemall.com/us/termsofUse.html">
-                  Terms &amp; Conditions
-                </a>
-                <a href="http://us.lemall.com/us/privacyPolicy.html">
-                  Privacy Policy
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <nav-footer></nav-footer>
     </div>
 </template>
 <script>
@@ -130,12 +104,19 @@ import './../assets/css/base.css'
 import './../assets/css/product.css'
 import './../assets/css/checkout.css'
 import './../assets/css/login.css'
+//import NavHeader from '@/components/Header.vue'
+import NavHeader from '../components/Header'
+import NavFooter from '@/components/NavFooter'
 export default {
   
   data(){
     return {
       msg: 'hello Vue!'
     }
+  },
+  components: {
+    NavHeader,
+    NavFooter
   }
 }
 </script>
