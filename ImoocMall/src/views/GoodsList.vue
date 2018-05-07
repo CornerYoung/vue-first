@@ -103,17 +103,30 @@ import './../assets/css/login.css'
 import NavHeader from '../components/NavHeader'
 import NavFooter from '@/components/NavFooter'
 import NavBread from '../components/NavBread'
+import axios from 'axios'
 export default {
-  
   data(){
     return {
-      msg: 'hello Vue!'
+      goodsList: []
     }
   },
   components: {
     NavHeader,
     NavFooter,
     NavBread
+  },
+  mounted: function(){
+    this.getGoodsList();
+  },
+  methods: {
+    getGoodsList(){
+      console.log(12345)
+      axios.get('../../mock/goods.json').then((result)=>{
+        var res = result.data;
+        this.goodsList = res.result;
+        console.log(result)
+      });
+    }
   }
 }
 </script>
