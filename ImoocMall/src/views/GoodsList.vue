@@ -18,7 +18,7 @@
               <dl class="filter-price">
                 <dt>Price:</dt>
                 <dd><a href="javascript:void(0)">All</a></dd>
-                <dd v-for= "price in priceFilter">
+                <dd v-for= "price in priceFilter" :key="price">
                   <a href="javascript:void(0)">{{price.startPrice}} - {{price.endPrice}}</a>
                 </dd>
               </dl>
