@@ -31,6 +31,7 @@
                   <li>
                     <div class="pic">
                       <a href="#"><img src="static/1.jpg" alt=""></a>
+                      <!-- <a href="#"><img v-lazy="'/static/'+1.jpg" alt=""></a> -->
                     </div>
                     <div class="main">
                       <div class="name">XX</div>
