@@ -12,7 +12,7 @@ let server = http.createServer((req,res)=>{
     res.statusCode = 200;
     res.setHeader('Content-Type','text/plain;charset=utf-8');
     
-    
+    console.log('url: '+req.url);
     res.end(util.inspect(url.parse(req.url)));
 });
 
