@@ -1,8 +1,8 @@
 let user = require('./User');
 
-// console.log(`userName:${user.userName}`);
+console.log(`userName:${user.userName}`);
 
-// console.log(`I'am ${user.userName},I say ${user.sayHello()}`);
+console.log(`I'am ${user.userName},I say ${user.sayHello()}`);
 
 let http = require('http');
 let url = require('url');
