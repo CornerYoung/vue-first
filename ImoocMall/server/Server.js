@@ -4,10 +4,7 @@ let util = require('util');
 let fs = require('fs'); //fs模块 即文件系统模块，通过 fs 去读文件系统
 
 let server = http.createServer((req, res) => {
-    res.statusCode = 200;
-
-    res.setHeader('Content-Type', 'text/plain;charset=utf-8');
-
+    
     let pathname = url.parse(req.url).pathname;
     fs.readFile(pathname.substring(1),function(err,data){
         if(err){
@@ -18,13 +15,12 @@ let server = http.createServer((req, res) => {
             res.writeHead(200,{
                 'Content-Type': 'text/html'
             });
-
             res.write(data.toString());
         };
 
+        res.end();
     });
 
-    res.end('Server.js');
 });
 
 server.listen(3000, '127.0.0.1', function () {
