@@ -3,6 +3,7 @@
 //以下模拟调用接口
 let https = require('https');
 let util = require('util');
+//node.js 有时候是需要在服务端去掉用第三方接口的，不需要在前端去调
 https.get('https://www.imooc.com/index/getstarlist',function(res){
     let data = '';
     res.on('data',function(chunk){
