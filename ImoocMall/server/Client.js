@@ -2,6 +2,7 @@
 //调用者称之为客户端，被调用者称之为服务端
 //以下模拟调用接口
 let https = require('https');
+let util = require('util');
 https.get('https://www.imooc.com/index/getstarlist',function(res){
     let data = '';
     res.on('data',function(chunk){
@@ -10,7 +11,9 @@ https.get('https://www.imooc.com/index/getstarlist',function(res){
 
     res.on('end',function(){
         let result = JSON.parse(data);
-        console.log('result '+result.msg)
+
+        // 使用util对输出结果进行调试
+        console.log('result ' + util.inspect(result));
     });
 });
 
