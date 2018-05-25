@@ -101,7 +101,6 @@ export default {
   data(){
     return {
       goodsList: [],
-      sortflag: 1,
       priceFilter: [
         {
           startPrice:'0.00',
