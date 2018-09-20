@@ -35,8 +35,12 @@
             },
             methods: {
                 handleTodolist:function(){
-                    this.list.push(this.todoValue);
-                    this.todoValue = ''
+                    if(this.todoValue !== ''){
+                        this.list.push(this.todoValue);
+                    };
+                    
+                    this.todoValue = '';
+                    
                 },
                 get:function(){
                     this.$http.get('package.json',{
