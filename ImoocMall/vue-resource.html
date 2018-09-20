@@ -17,14 +17,27 @@
         <a href="javascript:;" class="btn btn-primary" @click="post">Post请求</a>
         <a href="javascript:;" class="btn btn-primary" @click="jsonp">JSONP请求</a>
         <div>msg:{{msg}}</div>
+        <div class="input-group">
+            <input type="text" class="form-control" v-model="todoValue">
+            <button class="btn btn-info" @click="handleTodolist">添加待办事项</button>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" v-for="item in list">{{item}}</li>
+        </ul> 
     </div>
     <script>
-        new Vue({
+        var app = new Vue({
             el:'#app',
             data:{
-                msg: ''
+                msg: '',
+                list: [],
+                todoValue:''
             },
             methods: {
+                handleTodolist:function(){
+                    this.list.push(this.todoValue);
+                    this.todoValue = ''
+                },
                 get:function(){
                     this.$http.get('package.json',{
                         params: {
