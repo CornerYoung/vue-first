@@ -25,21 +25,39 @@
             <li class="list-group-item" v-for="(item,index) in list">{{item}}</li>
         </ul>  -->
         <ul>
-            <todo-item v-bind:content="item" v-for="(item,index) in list"></todo-item>
+            <todo-item v-bind:content="item"
+                        v-for="(item,index) in list">
+            </todo-item>
+        </ul>
+        <ul>
+            <TodoItemPart v-bind:content="item" v-for="(item,index) in list">{{content}}</TodoItemPart>
         </ul>
     </div>
     <script>
         //注册vue全局组件
+        //全局注册往往是不够理想的。比如，如果你使用一个像 webpack 这样的构建系统，
+        //全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会被包含在你最终的构建结果中。
+        //这造成了用户下载的 JavaScript 的无谓的增加。
         Vue.component('TodoItem',{
             props:['content'],
-            template: '<li class="list-group-item">{{content}}</li>'
+            template: '<li>{{content}}</li>'
         });
+
+        //局部组件
+        var TodoItemPart = {
+            props: ['content'],
+            template: '<li>{{content}}</li>'
+        };
+
         var app = new Vue({
             el:'#app',
             data:{
                 msg: '',
                 list: [],
                 todoValue:''
+            },
+            component:{
+                'TodoItemPart':TodoItemPart
             },
             methods: {
                 handleTodolist:function(){
