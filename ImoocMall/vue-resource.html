@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="app" class="container">
-        <h1>vue-resource 插件讲解</h1>
+        <h1>vue-resource</h1>
         <a href="javascript:;" class="btn btn-primary" v-on:click="get">Get请求</a>
         <a href="javascript:;" class="btn btn-primary" @click="post">Post请求</a>
         <a href="javascript:;" class="btn btn-primary" @click="jsonp">JSONP请求</a>
@@ -21,11 +21,19 @@
             <input type="text" class="form-control" v-model="todoValue">
             <button class="btn btn-info" @click="handleTodolist">提交</button>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item" v-for="item in list">{{item}}</li>
-        </ul> 
+        <!-- <ul class="list-group">
+            <li class="list-group-item" v-for="(item,index) in list">{{item}}</li>
+        </ul>  -->
+        <ul>
+            <todo-item v-bind:content="item" v-for="(item,index) in list"></todo-item>
+        </ul>
     </div>
     <script>
+        //注册vue全局组件
+        Vue.component('TodoItem',{
+            props:['content'],
+            template: '<li class="list-group-item">{{content}}</li>'
+        });
         var app = new Vue({
             el:'#app',
             data:{
@@ -38,9 +46,7 @@
                     if(this.todoValue !== ''){
                         this.list.push(this.todoValue);
                     };
-                    
                     this.todoValue = '';
-                    
                 },
                 get:function(){
                     this.$http.get('package.json',{
