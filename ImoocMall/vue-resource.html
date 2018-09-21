@@ -29,8 +29,8 @@
                         v-for="(item,index) in list">
             </todo-item>
         </ul>
-        <ul>
-            <TodoItemPart v-bind:content="item" v-for="(item,index) in list">{{content}}</TodoItemPart>
+        <ul class="list-group">
+            <todo-item-part v-bind:content="item" v-for="(item,index) in list"></todo-item-part>
         </ul>
     </div>
     <script>
@@ -40,7 +40,7 @@
         //这造成了用户下载的 JavaScript 的无谓的增加。
         Vue.component('TodoItem',{
             props:['content'],
-            template: '<li>{{content}}</li>'
+            template: '<li class="list-group-item">{{content}}</li>'
         });
 
         //局部组件
@@ -51,13 +51,13 @@
 
         var app = new Vue({
             el:'#app',
+            components: {
+                TodoItemPart: TodoItemPart
+            },
             data:{
                 msg: '',
                 list: [],
                 todoValue:''
-            },
-            component:{
-                'TodoItemPart':TodoItemPart
             },
             methods: {
                 handleTodolist:function(){
