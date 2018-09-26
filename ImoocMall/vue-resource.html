@@ -24,13 +24,18 @@
         <!-- <ul class="list-group">
             <li class="list-group-item" v-for="(item,index) in list">{{item}}</li>
         </ul>  -->
-        <ul>
+        <!-- <ul>
             <todo-item v-bind:content="item"
                         v-for="(item,index) in list">
             </todo-item>
-        </ul>
+        </ul> -->
         <ul class="list-group">
-            <todo-item-part v-bind:content="item" v-for="(item,index) in list"></todo-item-part>
+            <todo-item-part v-bind:content="item" 
+                            :index="index"
+                            v-for="(item,index) in list"
+                            @delete="handleItemDelete"
+                            >
+            </todo-item-part>
         </ul>
     </div>
     <script>
@@ -38,15 +43,20 @@
         //全局注册往往是不够理想的。比如，如果你使用一个像 webpack 这样的构建系统，
         //全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会被包含在你最终的构建结果中。
         //这造成了用户下载的 JavaScript 的无谓的增加。
-        Vue.component('TodoItem',{
-            props:['content'],
-            template: '<li class="list-group-item">{{content}}</li>'
-        });
+        // Vue.component('TodoItem',{
+        //     props:['content'],
+        //     template: '<li class="list-group-item">{{content}}</li>'
+        // });
 
         //局部组件
         var TodoItemPart = {
-            props: ['content'],
-            template: '<li>{{content}}</li>'
+            props: ['content','index'],
+            template: '<li @click="handleItem">{{content}}</li>',
+            methods: {
+                handleItem:function(){
+                    this.$emit('delete',this.index);
+                }
+            }
         };
 
         var app = new Vue({
@@ -65,6 +75,9 @@
                         this.list.push(this.todoValue);
                     };
                     this.todoValue = '';
+                },
+                handleItemDelete:function(index){
+                    this.list.splice(index,1)
                 },
                 get:function(){
                     this.$http.get('package.json',{
