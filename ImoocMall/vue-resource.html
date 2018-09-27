@@ -33,8 +33,7 @@
             <todo-item-part v-bind:content="item" 
                             :index="index"
                             v-for="(item,index) in list"
-                            @delete="handleItemDelete"
-                            >
+                            @delete="handleItemDelete">
             </todo-item-part>
         </ul>
     </div>
