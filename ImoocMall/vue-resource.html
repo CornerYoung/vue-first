@@ -36,6 +36,7 @@
                             @delete="handleItemDelete">
             </todo-item-part>
         </ul>
+        <div>{{fullName}}</div>
     </div>
     <script>
         //注册vue全局组件
@@ -66,7 +67,16 @@
             data:{
                 msg: '',
                 list: [],
-                todoValue:''
+                todoValue:'',
+                firstName:'Young',
+                lastName:'Corner'
+            },
+            computed:{
+                fullName:{
+                    get: function(){
+                        return this.firstName+''+this.lastName;
+                    }
+                }
             },
             methods: {
                 handleTodolist:function(){
