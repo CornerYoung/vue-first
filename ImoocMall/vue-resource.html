@@ -9,6 +9,9 @@
     <title>vue-resource</title>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+    <style>
+    .activated{color: aqua;font-size: 40px}
+    </style>
 </head>
 <body>
     <div id="app" class="container">
@@ -36,7 +39,7 @@
                             @delete="handleItemDelete">
             </todo-item-part>
         </ul>
-        <div>{{fullName}}</div>
+        <div :class="{activated:isActivated}" @click="handleChangeStyle">{{fullName}}</div>
     </div>
     <script>
         //注册vue全局组件
@@ -69,7 +72,8 @@
                 list: [],
                 todoValue:'',
                 firstName:'Young',
-                lastName:'Corner'
+                lastName:'Corner',
+                isActivated:true
             },
             computed:{
                 fullName:{
@@ -85,6 +89,9 @@
             },
             //计算属性，当他所依赖的值发生变化时，计算属性才会改变
             methods: {
+                handleChangeStyle:function(){
+                    this.isActivated=false;
+                },
                 handleTodolist:function(){
                     if(this.todoValue !== ''){
                         this.list.push(this.todoValue);
