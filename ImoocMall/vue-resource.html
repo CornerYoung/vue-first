@@ -11,6 +11,7 @@
     <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
     <style>
     .activated{color: aqua;font-size: 40px}
+    .activated-arr{color: coral;font-size: 32px;}
     </style>
 </head>
 <body>
@@ -41,6 +42,7 @@
         </ul>
         <div :class="{activated:isActivated}" @click="handleChangeStyle">{{fullName}}</div>
         <div :class="[colorRed]" @click="handleChangeStyle">{{fullName}}</div>
+        <div :style="styleColor" @click="handleChangeStyle">{{fullName}}</div>
     </div>
     <script>
         //注册vue全局组件
@@ -75,7 +77,11 @@
                 firstName:'Young',
                 lastName:'Corner',
                 isActivated:false,
-                colorRed:'activated'
+                colorRed:'activated-arr',
+                styleColor:{
+                    color:"red",
+                    fontSize:"50px"
+                }
             },
             computed:{
                 fullName:{
