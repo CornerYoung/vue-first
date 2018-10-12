@@ -40,6 +40,7 @@
             </todo-item-part>
         </ul>
         <div :class="{activated:isActivated}" @click="handleChangeStyle">{{fullName}}</div>
+        <div :class="[colorRed]" @click="handleChangeStyle">{{fullName}}</div>
     </div>
     <script>
         //注册vue全局组件
@@ -73,7 +74,8 @@
                 todoValue:'',
                 firstName:'Young',
                 lastName:'Corner',
-                isActivated:true
+                isActivated:false,
+                colorRed:'activated'
             },
             computed:{
                 fullName:{
@@ -90,7 +92,7 @@
             //计算属性，当他所依赖的值发生变化时，计算属性才会改变
             methods: {
                 handleChangeStyle:function(){
-                    this.isActivated=false;
+                    this.isActivated = this.isActivated == false ? true : false;
                 },
                 handleTodolist:function(){
                     if(this.todoValue !== ''){
