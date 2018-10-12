@@ -74,7 +74,12 @@
             computed:{
                 fullName:{
                     get: function(){
-                        return this.firstName+''+this.lastName;
+                        return this.firstName+' '+this.lastName;
+                    },
+                    set: function(value){
+                        var arr = value.split(' ');
+                        this.firstName = arr[0];
+                        this.lastName = arr[1];
                     }
                 }
             },
