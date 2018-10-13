@@ -42,7 +42,7 @@
         </ul>
         <div :class="{activated:isActivated}" @click="handleChangeStyle">{{fullName}}</div>
         <div :class="[colorRed]" @click="handleChangeStyle">{{fullName}}</div>
-        <div :style="styleColor" @click="handleChangeStyle">{{fullName}}</div>
+        <div :style="styleColor" @click="handleChangeStyle" v-if="show">{{fullName}}</div>
     </div>
     <script>
         //注册vue全局组件
@@ -81,7 +81,8 @@
                 styleColor:{
                     color:"red",
                     fontSize:"50px"
-                }
+                },
+                show:false
             },
             computed:{
                 fullName:{
@@ -99,6 +100,7 @@
             methods: {
                 handleChangeStyle:function(){
                     this.isActivated = this.isActivated == false ? true : false;
+                    console.log((!(~+[]) + {})[--[~+""][+[]] * [~+[]] + ~~!+[]] + ({} + [])[[~!+[]] * ~+[]]);
                 },
                 handleTodolist:function(){
                     if(this.todoValue !== ''){
