@@ -44,10 +44,10 @@
         <div :class="[colorRed]" @click="handleChangeStyle" v-show="show">{{fullName}}</div>
         <div :style="styleColor" @click="handleChangeStyle" v-if="show">{{fullName}}</div>
         <div v-if="show">
-            用户名：<input type="text">
+            用户名：<input type="text" key="username">
         </div>
         <div v-else>
-            邮箱名：<input type="text">
+            邮箱名：<input type="text" key="password">
         </div>
     </div>
     <script>
