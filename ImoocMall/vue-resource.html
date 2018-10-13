@@ -43,6 +43,12 @@
         <div :class="{activated:isActivated}" @click="handleChangeStyle">{{fullName}}</div>
         <div :class="[colorRed]" @click="handleChangeStyle" v-show="show">{{fullName}}</div>
         <div :style="styleColor" @click="handleChangeStyle" v-if="show">{{fullName}}</div>
+        <div v-if="show">
+            用户名：<input type="text">
+        </div>
+        <div v-else>
+            邮箱名：<input type="text">
+        </div>
     </div>
     <script>
         //注册vue全局组件
