@@ -37,7 +37,9 @@
             <todo-item-part v-bind:content="item" 
                             :index="index"
                             v-for="(item,index) in list"
-                            @delete="handleItemDelete">
+                            @delete="handleItemDelete"
+                            :key=""
+            >
             </todo-item-part>
         </ul>
         <div :class="{activated:isActivated}" @click="handleChangeStyle">{{fullName}}</div>
