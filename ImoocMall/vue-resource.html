@@ -72,7 +72,12 @@
 
         //全局组件，不需要在根实例里面注册
         Vue.component('row',{
-            template: '<tr><td>this is a row</td></tr>'
+            data:function(){
+                return {
+                    content:'this is content'
+                }
+            },
+            template: '<tr><td>{{content}}</td></tr>'
         });
 
         //局部组件
