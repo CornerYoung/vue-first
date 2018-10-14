@@ -51,6 +51,13 @@
         <div v-else>
             邮箱名：<input type="text" key="password">
         </div>
+        <table>
+            <tbody>
+                <row></row>
+                <row></row>
+                <row></row>
+            </tbody>
+        </table>
     </div>
     <script>
         //注册vue全局组件
@@ -61,6 +68,11 @@
         //     props:['content'],
         //     template: '<li class="list-group-item">{{content}}</li>'
         // });
+
+        //全局组件，不需要在根实例里面注册
+        Vue.component('row',{
+            template: '<tr><td>this is a row</td></tr>'
+        });
 
         //局部组件
         var TodoItemPart = {
