@@ -60,6 +60,8 @@
             </tbody>
         </table>
         <div ref="hello" @click="handleClick">hello world</div>
+        <Counter number="7970"></Counter>
+        <Counter number="323"></Counter>
     </div>
     <script>
         //注册vue全局组件
@@ -92,13 +94,19 @@
             }
         };
 
+        var Counter = {
+            props:['number'],
+            template:'<div>{{number}}</div>'
+        }
+
         //template 模版占位符，不会在页面中渲染。
         //除了数组可以使用v-for循环，对象也可以使用
 
         var app = new Vue({
             el:'#app',
             components: {
-                TodoItemPart: TodoItemPart
+                TodoItemPart: TodoItemPart,
+                Counter: Counter
             },
             data:{
                 msg: '',
@@ -112,6 +120,7 @@
                     color:"red",
                     fontSize:"50px"
                 },
+                number:0,
                 show:false
             },
             computed:{
