@@ -60,8 +60,9 @@
             </tbody>
         </table>
         <div ref="hello" @click="handleClick">hello world</div>
-        <Counter number="7970"></Counter>
-        <Counter number="323"></Counter>
+        <Counter number="0" @change="totalChange"></Counter>
+        <Counter number="0" @change="totalChange"></Counter>
+        <div>{{total}}</div>
     </div>
     <script>
         //注册vue全局组件
@@ -96,7 +97,19 @@
 
         var Counter = {
             props:['number'],
-            template:'<div>{{number}}</div>'
+            data:function(){
+                return {
+                    countNum:this.number
+                }
+            },
+            template:'<div @click="counterInc">{{countNum}}</div>',
+            methods:{
+                counterInc:function(){
+                    this.countNum++;
+                    console.log(this.countNum)
+                    this.$emit('change',this.countNum);
+                }
+            }
         }
 
         //template 模版占位符，不会在页面中渲染。
@@ -120,7 +133,7 @@
                     color:"red",
                     fontSize:"50px"
                 },
-                number:0,
+                total:0,
                 show:false
             },
             computed:{
@@ -137,6 +150,10 @@
             },
             //计算属性，当他所依赖的值发生变化时，计算属性才会改变
             methods: {
+                totalChange:function(number){
+                    console.log(number)
+                    this.total = number+number
+                },
                 handleClick:function(){
                     console.log(this.$refs.hello);
                 },
