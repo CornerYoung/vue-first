@@ -106,6 +106,7 @@
             methods:{
                 counterInc:function(){
                     this.countNum++;
+                    this.number = this.countNum
                     console.log(this.countNum)
                     this.$emit('change',this.countNum);
                 }
