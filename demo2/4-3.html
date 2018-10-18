@@ -9,11 +9,24 @@
 </head>
 <body>
     <div id="app">
-        <Child content="hello world!!!"></Child>
+        <Child :content="'dhsk'"></Child>
     </div>
     <script>
         Vue.component('Child',{
-            props:['content'],
+            //props:['content'],
+            // props:{
+            //     content: [String,Number]
+            // },
+            props: {
+                content:{
+                    type:[String,Number],
+                    required:true,
+                    default: 'default value!',
+                    validator:function(value){
+                        return (value.length > 5)
+                    }
+                }
+            },
             template:'<h1>{{content}}</h1>'
         });
 
