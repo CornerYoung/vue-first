@@ -9,34 +9,32 @@
 </head>
 <body>
     <div id="app">
-        <Child content="Dell"></Child>
-        <Child content="Lee"></Child>
+        <!-- <Child>
+            <h1>Dell</h1>
+            <h2>hjf</h2>
+        </Child> -->
+
+        <Child>
+            <h1 slot="header">header</h1>
+            <h2 slot="footer">hjf</h2>
+        </Child>
     </div>
     <script>
-        Vue.prototype.bus = new Vue(); 
+        // Vue.component('Child',{
+        //     template:` <div>
+        //                     <p>hello</p>
+        //                     <slot>默认内容</slot>
+        //                 </div>`
+        // });
 
-        Vue.component('Child',{
-            data:function(){
-                return {
-                    selfContent:this.content
-                }
-            },
-            props:{
-                content:String
-            },
-            template:'<h1 @click="handleClick">{{selfContent}}</h1>',
-            methods:{
-                handleClick: function(){
-                    this.bus.$emit('change',this.selfContent);
-                }
-            },
-            mounted:function(){
-                var that = this;
-                this.bus.$on('change',function(msg){
-                    that.selfContent = msg
-                });
-            }
-        });
+        //具名插槽
+        Vue.component('Child', {
+                template: ` <div>
+                                <slot name="header"></slot>
+                                <p>content</p>
+                                <slot name="footer"></slot>
+                        </div>`
+            });
 
         var vm = new Vue({
             el: '#app'
