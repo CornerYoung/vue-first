@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Demo2 vue中的作用域插槽</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <Child>
+            <!-- 加template是固定写法，必须这样写 -->
+            <template slot-scope="props"> 
+                <!-- <li>{{props.item}}</li> -->
+                <h1>{{props.item}}</h1>
+            </template>
+        </Child>
+    </div>
+    <script>
+        // Vue.component('Child', {
+        //     data:function(){
+        //         return {
+        //             list:[1,2,3,4]
+        //         }
+        //     },
+        //     template: ` <div>
+        //                     <ul>
+        //                         <li v-for="item in list">
+        //                             {{item}}
+        //                         </li>
+        //                     </ul>
+        //             </div>`
+        // });
+
+        Vue.component('Child', {
+                data: function () {
+                    return {
+                        list: [1, 2, 3, 4]
+                    }
+                },
+                template: ` <div>
+                            <ul>
+                                <slot v-for="item in list" :item=item></slot>
+                            </ul>
+                    </div>`
+            });
+
+        var vm = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>
