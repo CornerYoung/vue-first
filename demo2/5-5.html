@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Demo2 Vue中多个元素或组件的过渡</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <style>
+    .v-enter,.v-leave-to{
+        opacity: 0;
+    }
+    .v-enter-active,.v-leave-active{
+        transition: opacity 1s;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <transition 
+            mode="out-in"
+            @before-enter="handleBeforeEnter"
+            @enter="handleEnter"
+            @after-enter="handleAfterEnter"
+        >
+
+        <!-- 动态组件 -->
+        <cpmponent :is="type"></cpmponent>
+
+        <!-- <child v-if="show"></child>
+        <child-one v-else></child-one> -->
+
+            <!-- <h1 v-if="show" key="hello">
+                hello world
+            </h1>
+            <h1 v-else key="bye">
+                bye world
+            </h1> -->
+        </transition>
+        <button @click="handleClick">切换</button>
+    </div>
+    <script>
+
+        Vue.component('child',{
+            template:'<div>child</div>'
+        });
+
+        Vue.component('child-one', {
+            template: '<div>child-one</div>'
+        });
+
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                show:true,
+                type:'child'
+            },
+            methods:{
+                handleClick: function(){
+                    this.show = !this.show;
+                    this.type = this.type === 'child' ? 'child-one' : 'child';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
