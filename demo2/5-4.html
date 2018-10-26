@@ -36,10 +36,15 @@
                     el.style.opacity = 0;
                 },
                 handleEnter:function(el,done){
-                    Velocity(el,{opacity:1},{duration:1000})
+                    Velocity(el,{
+                        opacity:1
+                    },{
+                        duration:1000,
+                        complete:done
+                    })
                 },
                 handleAfterEnter:function(el){
-                    
+                    console.log('动画结束')
                 }
 
             }
