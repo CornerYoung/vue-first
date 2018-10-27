@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Demo2 Vue中多个元素或组件的过渡</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <style>
+    .v-enter,.v-leave-to{
+        opacity: 0;
+    }
+    .v-enter-active,.v-leave-active{
+        transition: opacity 1s;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <transition-group>
+            <div v-for="item of list" :key="item.id">{{item.title}}</div>
+        </transition-group>
+        <button @click="handleClick">切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                list:[],
+                count:0
+            },
+            methods:{
+                handleClick: function(){
+                    this.count++
+                    this.list.push({
+                        id:this.count,
+                        title:'hello world!'
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>
