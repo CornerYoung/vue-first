@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueLazyLoad from 'vue-lazyload'
+import fastclick from 'fastclick'
 import './assets/css/base.css'
 
 Vue.config.productionTip = false
+fastclick.attach(document.body)
 
 Vue.use(VueLazyLoad,{
   loading:'../static/loading-svg/loading-bars.svg'
