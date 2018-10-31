@@ -9,7 +9,7 @@
 
 html {
   font-family:sans-serif,"\5FAE\8F6F\96C5\9ED1",arial;
-  font-size: 100%;
+  font-size: 50px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -459,10 +459,6 @@ table {
   src: url("http://image1.lecloud.com/lemallus/20160812-cb520643-547c-4568-a67c-ad6e8178e539.eot?#iefix") format("embedded-opentype"), url("http://s3s.lecloud.com/lemallus/20160706-c26a20f9-3a00-4560-883e-6951660c35ed.woff2") format("woff2"), url("http://s3s.lecloud.com/lemallus/20160706-077959eb-a5ae-4864-8ed8-bed9cec1a919.woff") format("woff"), url("http://s3s.lecloud.com/lemallus/20160706-d04c5500-8735-4d2f-9646-855d71c3f795.ttf") format("truetype"), url("http://s3s.lecloud.com/lemallus/20160706-9feb7e43-02ae-4aec-89ec-dd706cea4ece.svg#moderat bold") format("svg");
 }*/
 
-html {
-  font-size: 10px;
-}
-
 body {
   font-size: 1.4rem;
   color: #605F5F;
@@ -676,10 +672,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
-  html {
-    font-size: 12.5px;
-  }
-
   .container {
     padding: 0;
   }
@@ -758,24 +750,6 @@ a:hover {
     line-height: 50px;
     background: #d1434a;
     color: #fff;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  html {
-    font-size: 11.6667px;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  html {
-    font-size: 10.8333px;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  html {
-    font-size: 10px;
   }
 }
 
