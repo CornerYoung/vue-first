@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 import VueLazyLoad from 'vue-lazyload'
 import fastclick from 'fastclick'
-import './assets/css/base.css'
-import './assets/css/iconfont.css'
+import 'css/base.css'
+import 'css/iconfont.css'
 
 Vue.config.productionTip = false
 fastclick.attach(document.body)
