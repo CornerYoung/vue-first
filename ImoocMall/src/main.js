@@ -5,11 +5,15 @@ import App from './App'
 import router from './router'
 import VueLazyLoad from 'vue-lazyload'
 import fastclick from 'fastclick'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'css/base.css'
 import 'css/iconfont.css'
+import 'swiper/dist/css/swiper.css'
+
 
 Vue.config.productionTip = false
 fastclick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 
 Vue.use(VueLazyLoad,{
   loading:'../static/loading-svg/loading-bars.svg'

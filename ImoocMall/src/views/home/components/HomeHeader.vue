@@ -50,6 +50,6 @@ export default {
         float : right 
         text-align : center
         .arrow-icon 
-            font-size 0.2rem
+            font-size 0.24rem
 </style>
 
