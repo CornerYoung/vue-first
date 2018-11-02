@@ -6,7 +6,7 @@ import router from './router'
 import VueLazyLoad from 'vue-lazyload'
 import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'css/base.css'
+import 'css/reset.css'
 import 'css/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 
