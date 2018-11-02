@@ -16,12 +16,11 @@ export default {
         return {
             swiperOption:{
                 pagination:'.swiper-pagination',
+                paginationClickable :true,
+                grabCursor : true,
                 loop:true,
-                autoplay: {
-                    delay: 10000,
-                    stopOnLastSlide: true,
-                    disableOnInteraction: false
-                }
+                autoplay: 1500,
+                autoplayDisableOnInteraction : false
             },
             swiperList:[{
                 id:'0001',
