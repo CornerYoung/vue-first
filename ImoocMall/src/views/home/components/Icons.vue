@@ -18,6 +18,11 @@ export default {
     name:'Icons',
     data:function(){
         return {
+            swiperOption:{
+                loop:true,
+                autoplay: false,
+                autoplayDisableOnInteraction : true
+            },
             IconList:[{
                     id:'0001',
                     imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
@@ -81,7 +86,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~css/varibles.styl';
+@import '~css/varibles.styl'
+@import '~css/mixins.styl'
 .icons >>> .swiper-comtainer
     height 0
     padding-bottom 50%
@@ -113,6 +119,7 @@ export default {
         line-height 0.44rem
         color $darkTextColor
         text-align center
+        ellipsis()
 </style>
 
 
