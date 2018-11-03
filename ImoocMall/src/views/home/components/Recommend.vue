@@ -83,10 +83,11 @@ export default {
         min-width 0
         .item-title
             line-height 0.54rem
-            font-size 0.34rem
+            font-size 0.3rem
             ellipsis()
         .item-desc
             line-height 0.4rem
+            font-size 0.26rem
             color #ccc
             ellipsis()
         .item-btn
