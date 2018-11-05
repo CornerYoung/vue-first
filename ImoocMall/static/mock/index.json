@@ -1,0 +1,135 @@
+{
+    "ret" : true,
+    "data" : {
+        "city" : "杭州",
+        "swiperList": [{
+          "id": "0001",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1810/fe/fd9c295c0e1a7602.jpg_750x200_11c8343f.jpg"
+        }, {
+          "id": "0002",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1809/69/8697f10f17f35a02.jpg_750x200_c98193a9.jpg"
+        }, {
+          "id": "0003",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1712/51/36632b2cb850e902.jpg_750x200_fa4120db.jpg"
+        }, {
+          "id": "0004",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1809/d4/e298dff35d3af802.jpg_750x200_9b0d56c1.jpg"
+        }, {
+          "id": "0005",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1809/ff/1bf7d3a4f6591002.jpg_750x200_40809f2a.jpg"
+        }, {
+          "id": "0006",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1806/1c/4847ea66072c7b02.jpg_750x200_c32457fb.jpg"
+        }, {
+          "id": "0007",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1811/1b/4143c7e0bfe78d02.jpg_750x200_5a220f6e.jpg"
+        }],
+        "IconList" : [{
+          "id": "0001",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+          "cont": "景点门票"
+        }, {
+          "id": "0002",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
+          "cont": "一日游"
+        }, {
+          "id": "0003",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
+          "cont": "杭州必游"
+        }, {
+          "id": "0004",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
+          "cont": "动植物园"
+        }, {
+          "id": "0005",
+          "imgUrl": "https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png",
+          "cont": "打卡圣地"
+        }, {
+          "id": "0006",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png",
+          "cont": "西湖"
+        }, {
+          "id": "0007",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png",
+          "cont": "杭州乐园"
+        }, {
+          "id": "0008",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png",
+          "cont": "西溪湿地"
+        }, {
+          "id": "0009",
+          "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png",
+          "cont": "暑期酷夏"
+        }],
+        "recommendList": [
+            {
+                "id": "0001",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1412/5a/271e81378fbb2df40d6098eaaddbf6ac.water.jpg_200x200_0ec74a3b.jpg",
+                "title": "呀诺达热带雨林",
+                "desc": "带上孩子来一次丛林探险吧"
+            },
+            {
+                "id": "0002",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1411/d0/3a3ac982cb22488d1b31dd2857fde18b.water.jpg_200x200_4b1cf9d4.jpg",
+                "title": "蜈支洲岛",
+                "desc": "带上心爱的人来浪漫情人岛吧~"
+            },
+            {
+                "id": "0003",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1412/43/1217ccf8106bca9a077b58bf56bb2598.water.jpg_200x200_318d0773.jpg",
+                "title": "三亚千古情景区",
+                "desc": "置身传统黎村，领略黎族风情"
+            },
+            {
+                "id": "0004",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1802/ef/ef88e4b2fec1f385a3.img.jpg_200x200_217e7a83.jpg",
+                "title": "亚特兰蒂斯失落的空间水族馆",
+                "desc": "失落的空间水族馆邀您一同揭开千年之谜"
+            },
+            {
+                "id": "0005",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1710/7f/7f06f56b02987c66a3.img.jpg_200x200_2c416b4a.jpg",
+                "title": "库木塔格沙漠景区",
+                "desc": "帅的人都去过了😎，你还等什么~"
+            },
+            {
+                "id": "0006",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1604/79/7970f247fb8f32b690.img.jpg_200x200_3108631c.jpg",
+                "title": "喀拉峻",
+                "desc": "👍小伙伴们都收藏了，去看看吧~"
+            },
+            {
+                "id": "0007",
+                "imgUrl": "http://img1.qunarzz.com/sight/p0/1704/36/36d961ca13ce0cfa3.img.jpg_200x200_c4f43f77.jpg",
+                "title": "吴桥杂技大世界",
+                "desc": "这里最近很火哦，好多人都在点评它呢！"
+            }
+        ],
+        "weekendList": [
+            {
+                "id": "0001",
+                "imgUrl": "http://img1.qunarzz.com/sight/source/1509/79/e3036d299610f8.jpg_r_640x214_ac8d495d.jpg",
+                "title": "石家庄的秋天",
+                "desc": "金秋时节无限美，层林尽染好风光"
+            },
+            {
+                "id": "0002",
+                "imgUrl": "http://img1.qunarzz.com/sight/source/1505/81/b178edc1197700.jpg_r_640x214_9acee897.jpg",
+                "title": "厦门娱乐万岁",
+                "desc": "不登鼓浪屿的新玩法~"
+            },
+            {
+                "id": "0003",
+                "imgUrl": "http://img1.qunarzz.com/sight/source/1511/14/1cf5dc2ecbfc16.jpg_r_640x214_b4b3a58a.jpg",
+                "title": "最美丝路行",
+                "desc": "情系西北，中国梦丝路行"
+            },
+            {
+                "id": "0004",
+                "imgUrl": "http://img1.qunarzz.com/sight/source/1505/25/87744e508e62c5.jpg_r_640x214_6c481013.jpg",
+                "title": "带宝贝玩转香港",
+                "desc": "孩子的天堂，别想拉走小朋友"
+            }
+        ]
+    }
+}
