@@ -1,8 +1,8 @@
 <template>
     <div>
-        <home-header></home-header>
-        <home-swiper></home-swiper>
-        <icons></icons>
+        <home-header :city="city"></home-header>
+        <home-swiper :swiperList="swiperList"></home-swiper>
+        <icons :IconList="IconList"></icons>
         <home-recommend></home-recommend>
         <home-weekend></home-weekend>
     </div>
@@ -24,6 +24,13 @@ export default {
         HomeRecommend,
         HomeWeekend
     },
+    data () {
+        return {
+            city : '',
+            swiperList : [],
+            IconList : []
+        }
+    },
     methods : {
         getHomeInfo : function(){
             //目前用的是本地模拟的地址，假如代码要上线，肯定不能用这样的地址，就需要在上线之前把这里的地址重新替换成/api/index.json这种格式
@@ -33,7 +40,13 @@ export default {
             .then(this.getHomeInfoSccc)
         },
         getHomeInfoSccc(res){
-            console.log(res.data)
+            res = res.data;
+            const data = res.data
+            if( res.ret && data ){
+                this.city = data.city
+                this.swiperList = data.swiperList
+                this.IconList = data.IconList
+            };
         }
     },
     mounted () {
