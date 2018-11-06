@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li class="item" v-for="item of recommendList" :key="item.id">
+            <li class="item" v-for="item of weekendList" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" alt="" srcset="">
                 </div>
@@ -20,7 +20,7 @@ export default {
     name:'HomeWeekend',
     data(){
         return {
-            recommendList: [{
+            weekendList: [{
                 id:'0001',
                 imgUrl: 'http://img1.qunarzz.com/sight/source/1509/79/e3036d299610f8.jpg_r_640x214_ac8d495d.jpg',
                 title: '石家庄的秋天',
