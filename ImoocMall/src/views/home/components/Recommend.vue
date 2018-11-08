@@ -67,6 +67,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~css/mixins.styl'
+@import '~css/varibles.styl';
 .recommend-title
     margin-top 0.2rem
     line-height 0.8rem
@@ -98,5 +99,5 @@ export default {
             background-color #ff9300
             padding 0 0.2rem
             border-radius 0.06rem
-            color #fff
+            color $whiteTextColor
 </style>

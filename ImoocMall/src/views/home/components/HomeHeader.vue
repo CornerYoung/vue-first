@@ -34,10 +34,10 @@ export default {
 @import '~css/varibles.styl';
 .header
     display flex
-    line-height : .86rem
+    line-height : $headerHeight
     font-size : 0.3rem
     background-color : $bgColor
-    color : #fff
+    color : $whiteTextColor
     .header-left
         width : 0.64rem
         float : left
@@ -51,13 +51,14 @@ export default {
         padding-left 0.2rem
         height : 0.64rem
         line-height : 0.64rem
-        background-color #ffffff
+        background-color $whiteTextColor
         border-radius : 5px
         color : #ccc
     .header-right
         width : 1.24rem
         float : right 
         text-align : center
+        color $whiteTextColor
         .arrow-icon 
             font-size 0.24rem
 </style>
