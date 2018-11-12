@@ -5,7 +5,11 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">{{hotcities[5].name}}</div>
+                        <!-- 
+                            这里使用 {{hotcities[5].name}} 会报错
+                            <div class="button">{{hotcities[5].name}}</div> 
+                        -->
+                        <div class="button">杭州</div>
                     </div>
                 </div>
             </div>
@@ -27,7 +31,7 @@
                         {{innerItem.name}}
                     </li>
                 </ul>
-            </div>
+            </div> 
         </div>
     </div>
 </template>
