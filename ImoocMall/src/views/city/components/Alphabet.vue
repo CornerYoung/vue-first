@@ -37,7 +37,6 @@ export default {
     },
     methods:{
         handleLiClick (ev) {
-            console.log(this.letters)
             this.$emit('change',ev.target.innerText)
         },
         handleTouchStart () {

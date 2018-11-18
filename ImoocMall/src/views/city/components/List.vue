@@ -54,6 +54,7 @@ export default {
         this.scroll = new BScroll(this.$refs.wrapper)
     },
     watch:{
+        //监听 letter 的变化，一旦 letter 发生改变，城市列表跳到相应的区域
         letter(){
             if(this.letter){
                 const element = this.$refs[this.letter][0]
