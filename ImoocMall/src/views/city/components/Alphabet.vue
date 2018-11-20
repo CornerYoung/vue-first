@@ -54,7 +54,7 @@ export default {
                     clearTimeout(this.timer)
                 }
                 this.timer = setTimeout( ()=>{
-console.log('time')
+
                     //每次滑动的时候都会计算一遍 startTop 性能比较低
                     //const startTop = this.$refs['A'][0].offsetTop
 
