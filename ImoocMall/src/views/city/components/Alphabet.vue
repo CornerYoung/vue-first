@@ -23,8 +23,12 @@ export default {
     },
     data () {
         return {
-            touchFlag : false
+            touchFlag : false,
+            startTop : 0
         }
+    },
+    updated () {
+        this.startTop = this.$refs['A'][0].offsetTop;
     },
     computed:{
         letters () {
@@ -44,11 +48,14 @@ export default {
         },
         handleTouchMove (ev) {
             if(this.touchFlag){
-                const startTop = this.$refs['A'][0].offsetTop
+
+                //每次滑动的时候都会计算一遍 startTop 性能比较低
+                //const startTop = this.$refs['A'][0].offsetTop
 
                 //const touchY = this.$refs[item][0].clientY
                 const touchY = ev.touches[0].clientY - 79
-                const index = Math.floor((touchY-startTop)/20)
+                //const index = Math.floor((touchY-startTop)/20)
+                const index = Math.floor((touchY-this.startTop)/20)
 
                 // this.$emit('touch',index)
                 if(index >= 0 && index < this.letters.length){
