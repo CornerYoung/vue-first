@@ -24,7 +24,8 @@ export default {
     data () {
         return {
             touchFlag : false,
-            startTop : 0
+            startTop : 0,
+            timer : null
         }
     },
     updated () {
@@ -49,18 +50,27 @@ export default {
         handleTouchMove (ev) {
             if(this.touchFlag){
 
-                //每次滑动的时候都会计算一遍 startTop 性能比较低
-                //const startTop = this.$refs['A'][0].offsetTop
-
-                //const touchY = this.$refs[item][0].clientY
-                const touchY = ev.touches[0].clientY - 79
-                //const index = Math.floor((touchY-startTop)/20)
-                const index = Math.floor((touchY-this.startTop)/20)
-
-                // this.$emit('touch',index)
-                if(index >= 0 && index < this.letters.length){
-                    this.$emit('change',this.letters[index])
+                if(this.timer){
+                    clearTimeout(this.timer)
                 }
+                this.timer = setTimeout( ()=>{
+console.log('time')
+                    //每次滑动的时候都会计算一遍 startTop 性能比较低
+                    //const startTop = this.$refs['A'][0].offsetTop
+
+                    //const touchY = this.$refs[item][0].clientY
+                    const touchY = ev.touches[0].clientY - 79
+
+                    //const index = Math.floor((touchY-startTop)/20)
+                    const index = Math.floor((touchY-this.startTop)/20)
+
+                    // this.$emit('touch',index)
+                    if(index >= 0 && index < this.letters.length){
+                        this.$emit('change',this.letters[index])
+                    }
+
+                },60)
+
             }
         },
         handleTouchEnd () {
