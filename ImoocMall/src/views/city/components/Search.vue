@@ -13,8 +13,6 @@
         <div class="search-detaile">
             <ul>
                 <li class="city-item">{{city}}</li>
-                <li class="city-item">上海</li>
-                <li class="city-item">杭州</li>
             </ul>
         </div>
     </div>
@@ -23,10 +21,22 @@
 <script>
 export default {
     name: 'CitySearch',
+    props:{
+        citys : Object,
+        cityList : []
+    },
     data () {
         return {
             city:''
         }
+    },
+    watch:{
+        city () {
+            this.city
+        }
+    },
+    mounted () {
+        console.log(this.citys)
     }
 }
 </script>
