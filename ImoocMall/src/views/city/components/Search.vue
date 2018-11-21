@@ -22,12 +22,12 @@
 export default {
     name: 'CitySearch',
     props:{
-        citys : Object,
-        cityList : []
+        citys : Object
     },
     data () {
         return {
-            city:''
+            city:'',
+            cityList : []
         }
     },
     watch:{
@@ -36,7 +36,10 @@ export default {
         }
     },
     mounted () {
-        console.log(this.citys)
+        for(let cityItem in this.citys){
+            this.cityList.push(cityItem)
+        }
+        console.log(this.cityList)
     }
 }
 </script>
