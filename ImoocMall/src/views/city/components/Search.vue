@@ -32,7 +32,7 @@ export default {
     },
     watch:{
         city () {
-            this.city
+            console.log(this.city)
         }
     },
     mounted () {
