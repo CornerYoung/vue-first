@@ -27,12 +27,21 @@ export default {
     data () {
         return {
             city:'',
-            cityList : []
+            cityList : [],
+            timer : null
         }
     },
     watch:{
+        //监听器 监听city的改变
         city () {
-            console.log(this.city)
+            //设置节流函数
+            if(this.timer){
+                clearTimeout(this.timer)
+            }
+
+            this.timer = setTimeout(()=>{
+                const result = []
+            },100)
         }
     },
     mounted () {
