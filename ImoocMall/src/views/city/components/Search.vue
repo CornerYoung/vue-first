@@ -60,8 +60,6 @@ export default {
         border-radius 0.06rem
         color #666
 .search-detaile
-    width 100%
-    height 100%
     background-color #eee
     position absolute
     z-index 1
