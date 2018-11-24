@@ -10,15 +10,23 @@
                 v-model="city"
             >
         </div>
-        <div class="search-detaile">
+        <div class="search-detaile" ref="search" v-show="city">
             <ul>
-                <li class="city-item" v-for="(item,index) of cityList" :key="index">{{item.name}}</li>
+                <li 
+                    class="city-item" 
+                    v-for="(item,index) of cityList" 
+                    :key="index"
+                >
+                    {{item.name}}
+                </li>
+                <li class="city-item-none" v-show="!cityList.length">您搜索的内容不存在！</li>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 export default {
     name: 'CitySearch',
     props:{
@@ -38,6 +46,10 @@ export default {
             if(this.timer){
                 clearTimeout(this.timer)
             }
+            if(!this.city){
+                this.cityList = []
+                return
+            }
             //当监听到city发生变化时，隔100毫秒，箭头函数将被执行
             this.timer = setTimeout(()=>{
                 const result = []
@@ -53,10 +65,7 @@ export default {
         }
     },
     mounted () {
-        for(let cityItem in this.citys){
-            this.cityList.push(cityItem)
-        }
-        console.log(this.cityList)
+        this.scroll = new BScroll(this.$refs.search)
     }
 }
 </script>
@@ -89,5 +98,10 @@ export default {
         padding-left 0.2rem
         background-color  #fff
         border-bottom 1px solid #eee
+    .city-item-none
+        font-size 0.38rem
+        background-color #ffffff
+        line-height 0.8rem
+        text-align center
 </style>
 
