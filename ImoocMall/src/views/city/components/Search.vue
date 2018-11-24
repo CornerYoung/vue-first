@@ -86,6 +86,8 @@ export default {
     right 0
     .city-item
         line-height 0.5rem
-        padding-left 0.1rem
+        padding-left 0.2rem
+        background-color  #fff
+        border-bottom 1px solid #eee
 </style>
 
