@@ -12,7 +12,7 @@
         </div>
         <div class="search-detaile">
             <ul>
-                <li class="city-item">{{city}}</li>
+                <li class="city-item" v-for="(item,index) of cityList" :key="index">{{item.name}}</li>
             </ul>
         </div>
     </div>
@@ -38,9 +38,17 @@ export default {
             if(this.timer){
                 clearTimeout(this.timer)
             }
-
+            //当监听到city发生变化时，隔100毫秒，箭头函数将被执行
             this.timer = setTimeout(()=>{
                 const result = []
+                for(let i in this.citys){
+                    this.citys[i].forEach((value)=>{
+                        if( value.spell.indexOf(this.city)>-1 || value.name.indexOf(this.city)>-1 ){
+                            result.push(value)
+                        }
+                    })
+                }
+                this.cityList = result
             },100)
         }
     },
