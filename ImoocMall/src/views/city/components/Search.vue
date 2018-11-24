@@ -10,7 +10,7 @@
                 v-model="city"
             >
         </div>
-        <div class="search-detaile" ref="search" v-show="city">
+        <div class="search-detaile" v-show="city" ref="search">
             <ul>
                 <li 
                     class="city-item" 
@@ -19,7 +19,7 @@
                 >
                     {{item.name}}
                 </li>
-                <li class="city-item-none" v-show="!cityList.length">您搜索的内容不存在！</li>
+                <li class="city-item-none" v-show="hasNoData">您搜索的内容不存在！</li>
             </ul>
         </div>
     </div>
@@ -66,6 +66,11 @@ export default {
     },
     mounted () {
         this.scroll = new BScroll(this.$refs.search)
+    },
+    computed:{
+        hasNoData () {
+            return !this.cityList.length
+        }
     }
 }
 </script>
@@ -93,8 +98,9 @@ export default {
     bottom 0
     left 0
     right 0
+    overflow hidden
     .city-item
-        line-height 0.5rem
+        line-height 0.6rem
         padding-left 0.2rem
         background-color  #fff
         border-bottom 1px solid #eee
