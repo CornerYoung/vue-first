@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state : {
-        city : '北京'
+        city : '北京',
+        user : '杨国宁'
     }
 })
