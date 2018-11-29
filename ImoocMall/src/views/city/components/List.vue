@@ -17,7 +17,7 @@
                 <div class="title border-topbottom">热门城市</div>
                 <ul class="button-list">
                     <li class="button-wrapper" v-for="item of hotcities" :key="item.id">
-                        <div class="button">{{item.name}}</div>
+                        <div class="button" @click="handleCityClick(item.name)">{{item.name}}</div>
                     </li>
                 </ul>
             </div>
@@ -52,6 +52,11 @@ export default {
     },
     mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    methods:{
+        handleCityClick (city) {
+            this.$store.dispatch('changeCity',city)
+        }
     },
     watch:{
         //监听 letter 的变化，一旦 letter 发生改变，城市列表跳到相应的区域
