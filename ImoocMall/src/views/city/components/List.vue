@@ -32,6 +32,7 @@
                         class="item border-bottom" 
                         v-for="innerItem of city" 
                         :key="innerItem.id"
+                        @click="handleCityClick(innerItem.name)"
                     >
                         {{innerItem.name}}
                     </li>
