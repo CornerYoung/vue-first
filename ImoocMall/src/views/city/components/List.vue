@@ -9,7 +9,7 @@
                             这里使用 {{hotcities[5].name}} 会报错
                             <div class="button">{{hotcities[5].name}}</div> 
                         -->
-                        <div class="button">杭州</div>
+                        <div class="button">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
