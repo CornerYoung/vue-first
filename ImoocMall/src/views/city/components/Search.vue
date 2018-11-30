@@ -16,6 +16,7 @@
                     class="city-item" 
                     v-for="(item,index) of cityList" 
                     :key="index"
+                    @click="handleCityClick(item.name)"
                 >
                     {{item.name}}
                 </li>
@@ -37,6 +38,11 @@ export default {
             city:'',
             cityList : [],
             timer : null
+        }
+    },
+    methods: {
+        handleCityClick () {
+            this.$store.commit('changeCity',city)
         }
     },
     watch:{
