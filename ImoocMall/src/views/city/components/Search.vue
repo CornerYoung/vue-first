@@ -14,8 +14,8 @@
             <ul>
                 <li 
                     class="city-item" 
-                    v-for="(item,index) of cityList" 
-                    :key="index"
+                    v-for="item of cityList" 
+                    :key="item.id"
                     @click="handleCityClick(item.name)"
                 >
                     {{item.name}}
@@ -41,8 +41,9 @@ export default {
         }
     },
     methods: {
-        handleCityClick () {
+        handleCityClick (city) {
             this.$store.commit('changeCity',city)
+            this.$router.push('/')
         }
     },
     watch:{
