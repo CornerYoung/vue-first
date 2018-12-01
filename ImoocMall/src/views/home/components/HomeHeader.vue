@@ -59,6 +59,9 @@ export default {
         float : right 
         text-align : center
         color $whiteTextColor
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         .arrow-icon 
             font-size 0.24rem
 </style>
