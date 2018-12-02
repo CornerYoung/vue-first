@@ -55,13 +55,14 @@ export default {
         border-radius : 5px
         color : #ccc
     .header-right
-        width : 1.24rem
+        min-width : 1.24rem
+        padding 0 0.1rem
         float : right 
         text-align : center
         color $whiteTextColor
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        // overflow: hidden;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
         .arrow-icon 
             font-size 0.24rem
 </style>
