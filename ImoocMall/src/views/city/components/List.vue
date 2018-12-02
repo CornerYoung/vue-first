@@ -9,7 +9,10 @@
                             这里使用 {{hotcities[5].name}} 会报错
                             <div class="button">{{hotcities[5].name}}</div> 
                         -->
-                        <div class="button">{{this.$store.state.city}}</div>
+                        <div class="button">
+                            <!-- {{this.$store.state.city}} -->
+                            {{this.currentCity}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,6 +47,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState,mapMutations } from 'vuex'
 export default {
     name:'CityList',
     props:{
@@ -57,9 +61,14 @@ export default {
     methods:{
         handleCityClick (city) {
             // this.$store.dispatch('changeCity',city)
-            this.$store.commit('changeCity',city)
+
+            //this.$store.commit('changeCity',city)
+            //我调用我的mutations就没必要麻烦的编写this.$store.commit('changeCity',city)了，只需要以下编写
+            this.changeCity(city)
             this.$router.push('/')
-        }
+        },
+        //我有一个mutations，叫做changeCity，然后我把这个mutations映射到我这个组件里面一个名字叫做changeCity的方法里
+        ...mapMutations(['changeCity'])
     },
     watch:{
         //监听 letter 的变化，一旦 letter 发生改变，城市列表跳到相应的区域
@@ -69,6 +78,12 @@ export default {
                 this.scroll.scrollToElement(element)
             }
         }
+    },
+    computed:{
+        ...mapState({
+            //我想把vuex中公用的city映射到当前的组件里,映射过来的名字叫做currentCity
+            currentCity:'city'
+        })
     }
 }
 </script>
