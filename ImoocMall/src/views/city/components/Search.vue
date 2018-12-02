@@ -28,6 +28,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState,mapMutations } from 'vuex'
 export default {
     name: 'CitySearch',
     props:{
@@ -42,9 +43,11 @@ export default {
     },
     methods: {
         handleCityClick (city) {
-            this.$store.commit('changeCity',city)
+            this.changeCity(city)
             this.$router.push('/')
-        }
+        },
+        //我有一个mutations，叫做changeCity，然后我把这个mutations映射到我这个组件里面一个名字叫做changeCity的方法里
+        ...mapMutations(['changeCity'])
     },
     watch:{
         //监听器 监听city的改变
