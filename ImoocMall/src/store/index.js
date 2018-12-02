@@ -1,35 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from './state'
+import mutations from './mutations'
 
 Vue.use(Vuex)
 
-let defaultCity = '杭州'
-try {
-    if (localStorage.city){
-        defaultCity = localStorage.city
-    }
-} catch (error) {
-    
-}
-
 export default new Vuex.Store({
-    state : {
-        // city: localStorage.city || '杭州'
-        city: defaultCity
-    },
+    // state : {
+    //     // city: localStorage.city || '杭州' 默认显示城市‘杭州’
+    //     city: defaultCity
+    // },
     // actions : {
     //     changeCity (ctx,city) {
     //         ctx.commit('changeCity',city)
     //     }
     // },
-    mutations : {
-        changeCity (state,city) {
-            state.city = city
-            try {
-                localStorage.city = city
-            } catch (error) {
-                
-            }
-        }
-    }
+    state : state,
+    mutations: mutations
 })
