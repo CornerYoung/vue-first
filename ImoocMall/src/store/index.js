@@ -17,6 +17,8 @@ export default new Vuex.Store({
     // },
     state : state,
     mutations: mutations,
+
+    //vuex中的getters类似于组件中计算属性，可以根据state计算一些数据，避免数据的冗余
     getters:{
         doubleCity () {
             return state.city + ' ' + state.city
