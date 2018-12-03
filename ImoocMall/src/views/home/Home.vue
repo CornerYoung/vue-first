@@ -16,6 +16,7 @@ import Icons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
     name: 'Home',
     components:{
@@ -55,7 +56,11 @@ export default {
         }
     },
     mounted () {
+        console.log('mounted')
         this.getHomeInfo();
+    },
+    activated () {
+        console.log('activated')
     }
 }
 </script>
