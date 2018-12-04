@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/home/Home'
 import City from '@/views/city/City'
+import Detail from '@/views/detail/Detail'
 //import HelloWorld from '../components/HelloWorld.vue'
 //import GoodsList from './../views/GoodsList'
 Vue.use(Router);
