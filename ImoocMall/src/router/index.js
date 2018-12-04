@@ -19,7 +19,7 @@ export default new Router({
       name: 'City',
       component: City
     },
-    {//城市路由
+    {//热销详情路由
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
