@@ -4,7 +4,7 @@
         <div class="banner-info">
             <div class="banner-title">杭州野生动物世界(AAAA景区)</div>
             <div class="banner-number">
-                <span class="iconfont arrow-icon">&#xe615;</span>
+                <span class="iconfont arrow-icon">&#xe682;</span>
                 39
             </div>
         </div>
@@ -34,11 +34,11 @@ export default {
         color #fff
         display flex
         font-size 0.32rem
-        line-height 0.5rem
+        line-height 0.6rem
         .banner-title
             flex 1
             line-height 0.4rem
-            padding-left 0.2rem
+            padding 0 0.2rem
         .banner-number
             padding 0 0.4rem
             height: .32rem
