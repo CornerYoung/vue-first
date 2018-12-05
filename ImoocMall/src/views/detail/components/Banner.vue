@@ -33,8 +33,9 @@ export default {
         right 0
         color #fff
         display flex
-        font-size 0.32rem
+        font-size 0.3rem
         line-height 0.6rem
+        background-image linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.8))
         .banner-title
             flex 1
             line-height 0.4rem
