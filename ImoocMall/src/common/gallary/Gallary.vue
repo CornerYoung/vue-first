@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="wrapper">
-            <swiper>
+            <swiper :options="swiperOptions">
                 <swiper-slide>
                     <img   
                         class="gallary-img" 
@@ -27,13 +27,9 @@ export default {
     name: 'CommonGallary',
     data () {
         return {
-            swiperOption:{
+            swiperOptions:{
                 pagination:'.swiper-pagination',
-                paginationClickable :true,
-                grabCursor : true,
-                loop:true,
-                autoplay: 1500,
-                autoplayDisableOnInteraction : false
+                paginationType:'fraction'
             }
         }
     }
@@ -41,11 +37,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.container >>> .swiper-container
+    overflow inherit
 .container
     display flex
     flex-direction column
     justify-content center
-    z-index 99
+    z-index 1
     position fixed
     left 0
     right 0
@@ -53,11 +51,12 @@ export default {
     bottom 0
     background-color #000
     .wrapper
-        background-color #fff
         height 0
         width 100%
         padding-bottom 100%
-        overflow hidden
         .gallary-img
             width 100%
+        .swiper-pagination
+            color #fff
+            bottom -1rem
 </style>
