@@ -41,16 +41,11 @@ export default {
     methods: {
         handleShowGallary : function(){
             this.showGallary = true
-            // setTimeout(function(){
-            //     this.showGallary = false
-            //     console.log('Banner触发','this.showGallary --> '+this.showGallary)
-            // },10000)
             console.log('点击在banner上，this.showGallary --> '+this.showGallary)
         },
         handleCloseGallary () {
-            //console.log('Banner触发',this.showGallary)
             this.showGallary = !this.showGallary
-            //console.log('Banner触发','this.showGallary --> '+this.showGallary)
+            console.log('点在了Gallary上，this.showGallary --> '+this.showGallary)
         }
     }
 }
