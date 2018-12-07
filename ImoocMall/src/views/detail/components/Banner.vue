@@ -11,6 +11,7 @@
         <common-gallary 
             :imgs="imgs"
             v-show="showGallary"
+            @close="handleCloseGallary"
         >
         </common-gallary>
     </div>
@@ -35,6 +36,11 @@ export default {
     methods: {
         handleShowGallary : function(){
             this.showGallary = true
+        },
+        handleCloseGallary () {
+            console.log('Banner触发',this.showGallary)
+            this.showGallary = !this.showGallary
+            console.log('Banner触发',this.showGallary)
         }
     }
 }

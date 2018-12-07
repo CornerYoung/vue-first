@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" @click="handleGallaryClick">
         <div class="wrapper">
             <swiper :options="swiperOptions">
                 <swiper-slide 
@@ -37,6 +37,11 @@ export default {
                 observeParents:true,
                 observer:true
             }
+        }
+    },
+    methods:{
+        handleGallaryClick () {
+            this.$emit('close')
         }
     }
 }
