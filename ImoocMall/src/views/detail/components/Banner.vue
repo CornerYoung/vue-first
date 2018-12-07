@@ -8,7 +8,7 @@
                 39
             </div>
         </div>
-        <common-gallary></common-gallary>
+        <common-gallary :imgs="imgs"></common-gallary>
     </div>
 </template>
 
@@ -16,6 +16,14 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
     name: 'DetailBanner',
+    data () {
+        return {
+            imgs : [
+                'http://img1.qunarzz.com/sight/p0/1411/c0/510cdcb852590824eb40027bb011c18a.water.jpg_350x240_a4cc818d.jpg',
+                'http://img1.qunarzz.com/sight/p0/1505/10/10d0ebb75a00502b.water.jpg_350x240_f091c7d4.jpg'
+            ]
+        }
+    },
     components: {
         CommonGallary
     }
