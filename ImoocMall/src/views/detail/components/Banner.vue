@@ -1,6 +1,11 @@
 <template>
-    <div class="banner" @click="handleShowGallary">
-        <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_600x330_c34588e7.jpg" alt="">
+    <div class="banner">
+        <img 
+            @click="handleShowGallary"
+            class="banner-img" 
+            src="//img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_600x330_c34588e7.jpg" 
+            alt=""
+        >
         <div class="banner-info">
             <div class="banner-title">杭州野生动物世界(AAAA景区)</div>
             <div class="banner-number">
@@ -36,11 +41,16 @@ export default {
     methods: {
         handleShowGallary : function(){
             this.showGallary = true
+            // setTimeout(function(){
+            //     this.showGallary = false
+            //     console.log('Banner触发','this.showGallary --> '+this.showGallary)
+            // },10000)
+            console.log('点击在banner上，this.showGallary --> '+this.showGallary)
         },
         handleCloseGallary () {
-            console.log('Banner触发',this.showGallary)
+            //console.log('Banner触发',this.showGallary)
             this.showGallary = !this.showGallary
-            console.log('Banner触发',this.showGallary)
+            //console.log('Banner触发','this.showGallary --> '+this.showGallary)
         }
     }
 }
