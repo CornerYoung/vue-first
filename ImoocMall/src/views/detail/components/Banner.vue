@@ -1,5 +1,5 @@
 <template>
-    <div class="banner">
+    <div class="banner" @click="handleShowGallary">
         <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_600x330_c34588e7.jpg" alt="">
         <div class="banner-info">
             <div class="banner-title">杭州野生动物世界(AAAA景区)</div>
@@ -8,7 +8,11 @@
                 39
             </div>
         </div>
-        <common-gallary :imgs="imgs"></common-gallary>
+        <common-gallary 
+            :imgs="imgs"
+            v-show="showGallary"
+        >
+        </common-gallary>
     </div>
 </template>
 
@@ -21,11 +25,17 @@ export default {
             imgs : [
                 'http://img1.qunarzz.com/sight/p0/1411/c0/510cdcb852590824eb40027bb011c18a.water.jpg_350x240_a4cc818d.jpg',
                 'http://img1.qunarzz.com/sight/p0/1505/10/10d0ebb75a00502b.water.jpg_350x240_f091c7d4.jpg'
-            ]
+            ],
+            showGallary : false
         }
     },
     components: {
         CommonGallary
+    },
+    methods: {
+        handleShowGallary : function(){
+            this.showGallary = true
+        }
     }
 }
 </script>
