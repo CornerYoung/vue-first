@@ -2,17 +2,13 @@
     <div class="container">
         <div class="wrapper">
             <swiper :options="swiperOptions">
-                <swiper-slide>
+                <swiper-slide 
+                    v-for="(item,index) in imgs"
+                    :key="index"
+                >
                     <img   
                         class="gallary-img" 
-                        src="http://img1.qunarzz.com/sight/p0/1411/c0/510cdcb852590824eb40027bb011c18a.water.jpg_350x240_a4cc818d.jpg" 
-                        alt=""
-                    >
-                </swiper-slide>
-                <swiper-slide>
-                    <img   
-                        class="gallary-img" 
-                        src="http://img1.qunarzz.com/sight/p0/1505/10/10d0ebb75a00502b.water.jpg_350x240_f091c7d4.jpg" 
+                        :src="item" 
                         alt=""
                     >
                 </swiper-slide>
@@ -25,6 +21,17 @@
 <script>
 export default {
     name: 'CommonGallary',
+    props:{
+        imgs : {
+            type: Array,
+            default () {
+                return [
+                        'http://img1.qunarzz.com/sight/p0/1411/c0/510cdcb852590824eb40027bb011c18a.water.jpg_350x240_a4cc818d.jpg',
+                        'http://img1.qunarzz.com/sight/p0/1505/10/10d0ebb75a00502b.water.jpg_350x240_f091c7d4.jpg'
+                    ]
+            }
+        }
+    },
     data () {
         return {
             swiperOptions:{
@@ -43,7 +50,7 @@ export default {
     display flex
     flex-direction column
     justify-content center
-    z-index 1
+    z-index 99
     position fixed
     left 0
     right 0
