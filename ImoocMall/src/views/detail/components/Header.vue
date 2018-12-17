@@ -11,6 +11,7 @@
         <div 
             class="header-fixed"
             v-show="!this.showAbs"
+            :style="opacityStyle"
         >
             <router-link to="/">
                 <div class="header-fixed-back iconfont">&#xe624;</div>
