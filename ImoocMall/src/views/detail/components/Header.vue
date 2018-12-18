@@ -35,6 +35,7 @@ export default {
     methods : {
         handleScroll () {
             const top = document.documentElement.scrollTop
+            console.log(123)
             if (top > 60) {
                 let opacity = top / 140
                 opacity = opacity > 1 ? 1 : opacity
@@ -45,9 +46,13 @@ export default {
             }
         }
     },
-    //当对一个组件使用<keep-alive>后，这个组件会多出一个activated的生命周期函数，在每一次页面展示时会执行一次
+    //当对一个组件使用<keep-alive>后，这个组件会多出一个 activated 的生命周期函数，在每一次页面展示时会执行一次
     activated () {
         window.addEventListener('scroll',this.handleScroll)
+    },
+    //相对应的，这个组件还会多出一个 deactivated 生命周期函数，对事件进行解绑
+    deactivated () {
+        window.removeEventListener('scroll',this.handleScroll)
     }
 }
 </script>
