@@ -45,6 +45,7 @@ export default {
             }
         }
     },
+    //当对一个组件使用<keep-alive>后，这个组件会多出一个activated的生命周期函数，在每一次页面展示时会执行一次
     activated () {
         window.addEventListener('scroll',this.handleScroll)
     }
