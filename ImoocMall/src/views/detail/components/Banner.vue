@@ -3,7 +3,7 @@
         <img 
             @click="handleShowGallary"
             class="banner-img" 
-            src="//img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_600x330_c34588e7.jpg" 
+            :src="banner"
             alt=""
         >
         <div class="banner-info">
@@ -26,6 +26,9 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
     name: 'DetailBanner',
+    props: {
+        banner: String
+    },
     data () {
         return {
             imgs : [
