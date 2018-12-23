@@ -1,6 +1,10 @@
 <template>
     <div>
-        <detail-banner :banner="bannerImg"></detail-banner>
+        <detail-banner 
+            :banner="bannerImg" 
+            :sightName="sightName"
+            :gallaryImgs="gallaryImgs"
+        ></detail-banner>
         <detail-header></detail-header>
         <detail-list :list="list"></detail-list>
         <div class="content"></div>
@@ -37,7 +41,7 @@ export default {
         },
         handleGetDataSucc (res) {
             res = res.data
-            if(res.ret && res.data){
+            if (res.ret && res.data) {
                 const data = res.data
                 this.sightName = data.sightName
                 this.bannerImg = data.bannerImg

@@ -7,14 +7,14 @@
             alt=""
         >
         <div class="banner-info">
-            <div class="banner-title">杭州野生动物世界(AAAA景区)</div>
+            <div class="banner-title">{{sightName}}</div>
             <div class="banner-number">
                 <span class="iconfont arrow-icon">&#xe682;</span>
-                39
+                {{this.banner.length}}
             </div>
         </div>
         <common-gallary 
-            :imgs="imgs"
+            :imgs="gallaryImgs"
             v-show="showGallary"
             @close="handleCloseGallary"
         >
@@ -27,7 +27,9 @@ import CommonGallary from 'common/gallary/Gallary'
 export default {
     name: 'DetailBanner',
     props: {
-        banner: String
+        banner: String,
+        sightName: String,
+        gallaryImgs: Array
     },
     data () {
         return {
