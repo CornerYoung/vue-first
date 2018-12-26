@@ -26,7 +26,7 @@ export default {
     name : 'DetailHeader',
     data () {
         return {
-            showAbs : true,
+            showAbs : false,
             opacityStyle : {
                 opacity : 0
             }
@@ -35,7 +35,6 @@ export default {
     methods : {
         handleScroll () {
             const top = document.documentElement.scrollTop
-            console.log('scroll')
             if (top > 60) {
                 let opacity = top / 140
                 opacity = opacity > 1 ? 1 : opacity
